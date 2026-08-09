@@ -7,11 +7,11 @@ Desenvolvidas e mantidas por Miguel Ribas Berlese & Enzo Shimada Daun.
 
 ## Skills disponíveis
 
-| Skill | Arquivos | Descrição |
-|-------|----------|-----------|
-| `biblioteca-fundamentos` | SKILL.md + 8 references | Julgamento operacional de 47 livros: negócios, liderança, vendas, marketing, finanças, produtividade, psicologia e mentalidade |
-| `ciberseguranca-pentest` | SKILL.md + 5 references | Pentest ético, OWASP Top 10 2023, ferramentas, threat intelligence e hardening de SaaS/NestJS |
-| `engenharia-software-pro` | SKILL.md + 4 references | Engenharia sênior: SOLID, Clean Architecture, TDD, stack web e desenvolvimento com IA |
+| Skill | Arquivos | Linhas |
+|-------|----------|--------|
+| `biblioteca-fundamentos` | SKILL.md + 8 references | ~2.300 linhas |
+| `ciberseguranca-pentest` | SKILL.md + 5 references | ~1.500 linhas |
+| `engenharia-software-pro` | SKILL.md + 4 references | ~800 linhas |
 
 ---
 
@@ -28,7 +28,7 @@ Copy-Item "$env:TEMP\nexmint-skills\ciberseguranca-pentest" $dest -Recurse -Forc
 Copy-Item "$env:TEMP\nexmint-skills\engenharia-software-pro" $dest -Recurse -Force
 
 # 3. Confirmar instalação
-ls $dest | Where-Object { $_.Name -in @("biblioteca-fundamentos","ciberseguranca-pentest","engenharia-software-pro") }
+Get-ChildItem $dest | Where-Object { $_.Name -in @("biblioteca-fundamentos","ciberseguranca-pentest","engenharia-software-pro") }
 ```
 
 ## Instalação no Claude Code (macOS/Linux)
@@ -44,10 +44,9 @@ cp -r /tmp/nexmint-skills/ciberseguranca-pentest $DEST/
 cp -r /tmp/nexmint-skills/engenharia-software-pro $DEST/
 ```
 
-## Atualizar skills
+## Atualizar skills (Windows)
 
 ```powershell
-# Windows — rodar novamente o script de instalação
 git clone https://github.com/MiguelRibasBerlese/skills.git "$env:TEMP\nexmint-skills"
 $dest = "$env:USERPROFILE\.claude\skills"
 Copy-Item "$env:TEMP\nexmint-skills\biblioteca-fundamentos" $dest -Recurse -Force
